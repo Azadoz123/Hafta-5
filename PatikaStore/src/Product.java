@@ -1,3 +1,5 @@
+import java.util.Scanner;
+//ürün ata sınıfı
 public abstract class  Product  {
     private int id;
     private String name;
@@ -8,7 +10,7 @@ public abstract class  Product  {
     private int ram;
     private String screenSize;
     private String memory;
-
+    Scanner scan = new Scanner(System.in);
     public Product() {
     }
 

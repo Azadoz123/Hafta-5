@@ -12,22 +12,34 @@ public class PatikaStore {
                     "3- Markaları Listeleme\n" +
                     "0- Çıkış Yap");
 
-            System.out.println("Yapmak istediğiniz işlemi seçiniz : ");
+            System.out.print("Yapmak istediğiniz işlemi seçiniz : ");
             int selection = scan.nextInt();
-
-            while (selection){
+            //Yapılacak işlem seçimi
+            switch (selection){
+                //Programı kapat
+                case 0:
+                    isRunning = false;
+                    break;
+                    //Notebook işlemleri
                 case 1:
                     Notebook notebook = new Notebook();
                     notebook.runMenu();
                     break;
+                    //Telefon işlemleri
                 case 2:
                     Phone phone = new Phone();
                     phone.runMenu();
                     break;
+                    //Marka listeleme
                 case 3:
                     Brand brand = new Brand();
-                    brand.
+                  //  Brand.brandList
+                    brand.printBrand();
+                    break;
+                default :
+                    System.out.println("Hatalı değer girdiniz.");
             }
         }
+        System.out.println("Program sonlandırılmıştır. Güle güle.");
     }
 }

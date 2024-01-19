@@ -1,4 +1,4 @@
-public class Phone extends Product implements Operation{
+public class Phone extends Product implements Operation<Phone>{
     private int camera;
     private int batteryCapacity;
     private String color;
@@ -16,7 +16,7 @@ public class Phone extends Product implements Operation{
 
     @Override
     public void runMenu() {
-
+        System.out.println("Phone running");
     }
 
     @Override
@@ -25,6 +25,7 @@ public class Phone extends Product implements Operation{
     }
 
     @Override
+ //   public void addProduct(Phone phone) {
     public void addProduct() {
 
     }
@@ -32,6 +33,11 @@ public class Phone extends Product implements Operation{
     @Override
     public void deleteProduct() {
 
+    }
+
+    @Override
+    public Phone getProduct(int id) {
+        return null;
     }
 
     @Override

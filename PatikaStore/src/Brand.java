@@ -2,13 +2,16 @@ import java.util.TreeSet;
 
 public class Brand implements Comparable<Brand>{
     private int id;
-    public String name;
-    private static int idCounter;
-
+    private String name;
+    public static int idCounter = 0;
+//markaları depoda tutma
     public static TreeSet<Brand> brandList = new TreeSet<>();
 
+    public Brand() {
+    }
+
     public Brand(String name) {
-        this.id = idCounter++;
+        this.id = ++idCounter;
         this.name = name;
     }
 
@@ -27,7 +30,7 @@ public class Brand implements Comparable<Brand>{
     public void setName(String name) {
         this.name = name;
     }
-
+//markaları ekleme
     static {
         brandList.add(new Brand("Samsung"));
         brandList.add(new Brand("Lenova"));
@@ -42,6 +45,12 @@ public class Brand implements Comparable<Brand>{
     }
     @Override
     public int compareTo(Brand o) {
-        this.name.compareTo(o.getName())
+       return this.name.compareTo(o.getName());
+    }
+//markaları listeleme
+    public void printBrand() {
+        for (Brand brand: brandList){
+            System.out.println("- " + brand.getName());
+        }
     }
 }
